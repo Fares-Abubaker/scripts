@@ -1,41 +1,48 @@
-# YouTube Scripts
+# YouTube Video Downloader Script
 
-Here are a bash script, that you can use to download videos from YouTube direct not from third party services.
+A bash script to directly download videos from YouTube without relying on third-party services.
+
+---
+
+## Dependencies
+
+Install the following OS dependencies:
+
+- curl
+- jq
+- aria2
+- ffmpeg
+
+For Mac users, you can install them using `brew` or any other package manager you prefer.
+
+---
+
+## Setup
+
+1. Clone this repository:
+   ```shell
+   git clone https://github.com/Fares-Abubaker/scripts.git
+   cd scripts/youtube
+   chmod +x download_from_youtube.sh
+   ```
 
 ---
 
 ## Usage
 
-To run these scripts you need to install these OS dependencies:
+To download a YouTube video, pass the video URL as an argument to the script. By default, it will download the highest
+quality available for the video and its associated audio. To specify a different quality, provide the desired 
+resolution (e.g., 144 for 144p) as a second argument.
 
-```
-curl, jq, aria2, ffmpeg
-```
+* Download in highest quality::
+    ```shell
+    ./download_from_youtube.sh https://www.youtube.com/watch?v=L5E0L2I5lAU
+    ```
 
-For Mac, you can install them on using `brew`, or any other way you prefer.
-
-Then you have to make sure that the script file executable, you can do it with this command:
-
-```shell
-chmod +x download_from_youtube.sh
-```
-
-After that, to run the script you have to pass the YouTube video URL to the script, by default it will install 
-the highest quality available for this video and its audio, or if you want a specific quality you can pass it after 
-the video link. Here are examples to run the script:
-
-* This script will download the highest quality of the video:
-```shell
-./download_from_youtube.sh https://www.youtube.com/watch?v=L5E0L2I5lAU
-```
-
-* This script will download the lowest quality of the video:
-```shell
-./download_from_youtube.sh https://www.youtube.com/watch?v=L5E0L2I5lAU 144
-```
+* Download in 144p quality:
+    ```shell
+    ./download_from_youtube.sh https://www.youtube.com/watch?v=L5E0L2I5lAU 144
+    ```
 
 ---
-
-This script wrote by: **Fares Abubaker**
-
-@ 2023
+Written by: **Fares Abubaker** | 2023
